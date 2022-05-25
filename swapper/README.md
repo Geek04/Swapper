@@ -1,4 +1,4 @@
-# swapper-main
+# swapper
 
 ## Project setup
 ```
