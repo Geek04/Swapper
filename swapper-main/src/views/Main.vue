@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-   
+    <h1>Hello</h1>
   </div>
 </template>
 
@@ -19,10 +19,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../style";
 
-.main{
-    
-}
 
 @media screen and (max-width: $sm){
 }
