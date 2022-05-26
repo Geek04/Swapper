@@ -1,53 +1,44 @@
 <template style="position: relative;">
-  <div class="menu">
-    <p class="menu_name">Swapper</p>
-    <a href="#"><img class="menu_img" src="@/assets/Menu.png" alt=""></a>
-  </div>
-  <div class="wallet">
-    <div class="wallet_info">
-      <span class="price">$ 4,229.94</span>
-      <span class="change_price green small_color">1,3%</span>
-      <p>4.41942 BNB <span style="padding: 0 5px">|</span> 0.0441942 ETH</p>
-    </div>
-    <div class="wallet_pay">
-      <a href="#"><img src="@/assets/input.png" alt=""></a>
-      <a href="#"><img src="@/assets/output.png" alt=""></a>
-    </div>
-  </div>
-  <div class="quotes">
-    <div class="portfolio">
-      <div>
-        <p>Portfolio</p>
-        <span class="price" style="font-size: 32px; margin-bottom: 20px">$ 4,229.94</span>
-        <span class="change_price red small_color" style="font-size: 18px">1,3%</span>
+  <div>
+    <menu-wallet></menu-wallet>
+    <div class="quotes">
+      <div class="portfolio">
+        <div>
+          <p>Portfolio</p>
+          <span class="price" style="font-size: 32px; margin-bottom: 20px">$ 4,229.94</span>
+          <span class="change_price red small_color" style="font-size: 18px">1,3%</span>
+        </div>
+        <img src="@/assets/rate.png" />
       </div>
-      <img src="@/assets/rate.png" />
+      <div class="moneys">
+        <exchange-rate
+          v-for="item in rates" 
+          :key="item.id"
+          :short_name="item.short_name"
+          :img="item.img"
+          :price="item.price"
+          :remains="item.remains" 
+          :name="item.name"
+          :change_is="item.change_is"
+          :change_price="item.change_price">
+        </exchange-rate>
+        <div style="height: 90px"></div>
+      </div>
     </div>
-    <div class="moneys">
-      <exchange-rate
-        v-for="item in rates" 
-        :key="item.id"
-        :short_name="item.short_name"
-        :img="item.img"
-        :price="item.price"
-        :remains="item.remains" 
-        :name="item.name"
-        :change_is="item.change_is"
-        :change_price="item.change_price">
-      </exchange-rate>
-      <div style="height: 90px"></div>
-    </div>
+    <div class="footer">
+      <img src="@/assets/input.png" alt=""><a href="#">Deposit</a>
+      <img src="@/assets/output.png" alt=""><a href="#">Withdraw</a>
+      <a href="#"><img class="footer_plus" src="@/assets/plus.png" /></a>
+    </div>    
   </div>
-  <div class="footer">
-    <img src="@/assets/input.png" alt=""><a href="#">Deposit</a>
-    <img src="@/assets/output.png" alt=""><a href="#">Withdraw</a>
-    <a href="#"><img class="footer_plus" src="@/assets/plus.png" /></a>
-  </div>
+
 </template>
 
 <script>
 import ExchangeRate from "@/components/ExchangeRate";
+import MenuWallet from "@/components/MenuWallet";
 import M_bitcoin from "@/assets/M_bitcoin.png";
+
 
 export default {
   name: 'HomeMain',
@@ -113,7 +104,8 @@ export default {
     }
   },
   components: {
-    ExchangeRate
+    ExchangeRate,
+    MenuWallet,
   }
   
 }

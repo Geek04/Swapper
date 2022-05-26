@@ -1,11 +1,16 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <menu-wallet></menu-wallet>
   </div>
 </template>
 
 <script>
+import MenuWallet from "@/components/MenuWallet";
+
 export default {
   name: 'AboutMain',
+  components: {
+    MenuWallet
+  }
 }
 </script>
