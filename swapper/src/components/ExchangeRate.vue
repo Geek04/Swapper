@@ -1,21 +1,31 @@
 <template>
     <div class="rate wallet">
-        <img src="@/assets/M_bitcoin.png" />
+        <img :src="img" />
         <div class="rate_info">
-            <div class="wallet_info" style="margin-left: -60%;">
-                <p>Bitcoin</p>
-                <span class="price">$2,638.02</span>
-                <p>0.001942 BTC</p>
+            <div class="wallet_info">
+                <p>{{name}}</p>
+                <span class="price">${{price}}</span>
+                <p>{{remains}} {{short_name}}</p>
             </div>
         </div>
-        <p class="rate_change_price green">0.02%</p>
+        <p v-if="change_is === 'up'" class="rate_change_price green">{{change_price}}%</p>
+        <p v-else class="rate_change_price red">{{change_price}}%</p>
     </div>
 </template>
 
 
 <script>
 export default {
-  name: "ExchangeRate",
+    name: "ExchangeRate",
+    props: {
+        name: String,
+        change_price: Number,
+        short_name: String,
+        img: String,
+        price: Number,
+        remains: Number,
+        change_is: String,
+  }
 }
 </script>
 
@@ -23,6 +33,8 @@ export default {
     .rate{
         margin-top: 10px;
         border-radius: 20px;
+        justify-content: flex-start;
+        position: relative;
     }
 
     .rate img{
@@ -33,10 +45,17 @@ export default {
         margin: 4px 0 !important;
     }
 
+    .wallet_info{
+        margin-left: 40px;
+        width: 100%;
+    }
+
     .rate_change_price{
-        right: 10%;
-        font-size: 18px;
+        font-size: 24px;
         font-weight: bold;
+        margin-top: 4px;
+        position: absolute;
+        right: 20px;
     }
 
     .green {
