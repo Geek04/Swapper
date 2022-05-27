@@ -13,6 +13,7 @@
     "trading-vue3-js": "^1.0.2",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
+    "vue-trading-view": "^1.0.1",
     "vue-tradingview-widgets": "^1.1.2",
     "vuex": "^4.0.0"
   },
