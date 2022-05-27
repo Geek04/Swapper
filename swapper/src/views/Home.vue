@@ -24,8 +24,8 @@
         <div style="height: 90px"></div>
       </div>
     </div>
-    <menu-footer :name_input:="name_input" :name_output="name_output" :img_input="img_input" :img_output="img_output"
-      :img_plus="img_plus"></menu-footer>
+    <menu-footer :name_input="name_input" :name_output="name_output" :img_input="img_input" :img_output="img_output"
+      :img_footer= "img_footer"></menu-footer>
   </div>
 
 </template>
@@ -38,7 +38,7 @@ import MenuFooter from "@/components/MenuFooter";
 import M_bitcoin from "@/assets/M_bitcoin.png";
 import img_input from "@/assets/input.png";
 import img_output from "@/assets/output.png"
-import img_plus from "@/assets/plus.png";
+import img_footer from "@/assets/plus.png";
 
 import axios from "axios";
 
@@ -80,7 +80,7 @@ export default {
       name_output: 'Withdraw',
       img_input: img_input,
       img_output: img_output,
-      img_plus: img_plus,
+      img_footer: img_footer,
     }
   },
   created: function () {

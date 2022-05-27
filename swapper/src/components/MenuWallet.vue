@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .menu{
     padding: 0 4%;
     display: flex;

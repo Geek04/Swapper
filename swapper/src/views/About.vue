@@ -18,7 +18,7 @@
         :name_output="name_output"
         :img_input="img_input"
         :img_output="img_output"
-        :img_plus= "img_plus"
+        :img_footer= "img_footer"
       ></menu-footer>
   </div>
 </template>
@@ -31,7 +31,7 @@ import { Chart } from 'vue-tradingview-widgets';
 
 import img_input from "@/assets/input.png";
 import img_output from "@/assets/output.png"
-import img_plus from "@/assets/plus.png";
+import img_footer from "@/assets/wheel.png";
 
 export default {
   name: 'AboutMain',
@@ -42,7 +42,7 @@ export default {
       name_output: 'Sell AMC',
       img_input: img_input,
       img_output: img_output,
-      img_plus: img_plus,
+      img_footer: img_footer,
     }
   },
   components: {

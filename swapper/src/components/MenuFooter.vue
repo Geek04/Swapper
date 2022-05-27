@@ -2,7 +2,7 @@
     <div class="footer">
       <img :src="img_input" alt=""><a href="#">{{name_input}}</a>
       <img :src="img_output" alt=""><a href="#">{{name_output}}</a>
-      <a href="#"><img class="footer_plus" :src="img_plus" /></a>
+      <a href="#"><img class="footer_plus" :src="img_footer" /></a>
     </div>  
 </template>
 
@@ -15,13 +15,12 @@ export default {
         name_output: String,
         img_input: String,
         img_output: String,
-        img_plus: String,
+        img_footer: String,
   }
 }
 </script>
 
 <style scoped>
-
   .footer{
     background-color:rgb(24, 24, 24);
     box-shadow: 0px -15px 15px black;
