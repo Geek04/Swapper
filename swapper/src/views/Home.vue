@@ -11,15 +11,9 @@
         <img src="@/assets/rate.png" />
       </div>
       <div class="moneys">
-        <exchange-rate v-for="item in rates"
-                        :key="item.id"
-                        :short_name="item.short_name"
-                        :img="item.img"
-                        :price="item.price"
-                        :remains="item.remains"
-                        :name="item.name"
-                        :change_is="item.change_is"
-                        :change_price="item.change_price">
+        <exchange-rate v-for="item in rates" :key="item.id" :short_name="item.short_name" :img="item.img"
+          :price="item.price" :remains="item.remains" :name="item.name" :change_is="item.change_is"
+          :change_price="item.change_price">
         </exchange-rate>
         <div style="height: 90px"></div>
       </div>
@@ -36,6 +30,9 @@ import MenuWallet from "@/components/MenuWallet";
 import MenuFooter from "@/components/MenuFooter";
 
 import M_bitcoin from "@/assets/M_bitcoin.png";
+import M_ethereum from "@/assets/M_ethereum.png";
+import M_bnb from "@/assets/M_bnb.png";
+
 import img_input from "@/assets/input.png";
 import img_output from "@/assets/output.png"
 import img_footer from "@/assets/plus.png";
@@ -47,35 +44,7 @@ export default {
   data() {
     return {
       M_bitcoin,
-      rates: [
-        {
-          name: 'Bitcoin',
-          short_name: 'BTC',
-          img: M_bitcoin,
-          price: '2,638.02',
-          remains: 0.001942,
-          change_price: 0.02,
-          change_is: 'up'
-        },
-        {
-          name: 'Etherium',
-          short_name: 'ETH',
-          img: M_bitcoin,
-          price: '7,893,249.94',
-          remains: 0.001942,
-          change_price: 0.05,
-          change_is: 'up'
-        },
-        {
-          name: 'Binance Token',
-          short_name: 'ETH',
-          img: M_bitcoin,
-          price: '7,893,249.94',
-          remains: 0.001942,
-          change_price: 0.05,
-          change_is: 'up'
-        },
-      ],
+      rates: [],
       name_input: 'Deposit',
       name_output: 'Withdraw',
       img_input: img_input,
@@ -84,6 +53,7 @@ export default {
     }
   },
   created: function () {
+    this.updateRates();
     setInterval(this.updateRates, 5000);
   },
   methods: {
@@ -91,10 +61,20 @@ export default {
       axios.get("/api/tokens").then(response => {
         this.rates = []
         response.data.forEach((token) => {
-          token["img"] = M_bitcoin;
+          switch (token["short_name"]) {
+            case "BTC":
+              token["img"] = M_bitcoin;
+              break;
+            case "ETH":
+              token["img"] = M_ethereum;
+              break;
+            case "BNB":
+              token["img"] = M_bnb;
+              break;
+          }
           this.rates.push(token);
-          });
         });
+      });
     }
   },
   components: {
