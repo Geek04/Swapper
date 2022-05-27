@@ -3,6 +3,17 @@ const { response } = require("express");
 
 const Token = require("./models/Token");
 
+const NameAliases = {
+    "Wrapped BNB": "Binance Coin",
+    "BTCB Token": "Bitcoin",
+    "Ethereum Token": "Ethereum"
+}
+
+const ShortNameAliases = {
+    "WBNB": "BNB",
+    "BTCB": "BTC",
+    "ETH": "ETH"
+}
 
 async function getPancakeSwapTokenData(tokenAddress) {
     const response = await axios.get(`https://api.pancakeswap.info/api/v2/tokens/${tokenAddress}`);
@@ -11,8 +22,8 @@ async function getPancakeSwapTokenData(tokenAddress) {
 
 function generateNewToken(tokenData) {
     return new Token({
-        name: tokenData["name"],
-        short_name: tokenData["symbol"],
+        name: NameAliases[tokenData["name"]],
+        short_name: ShortNameAliases[tokenData["symbol"]],
         img: "",
         price: +Number(tokenData["price"]).toFixed(2),
         change_is: "up"
@@ -41,7 +52,7 @@ module.exports = {
 
         for (tokenAddress of tokenAddresses) {
             getPancakeSwapTokenData(tokenAddress).then(response => {
-                Token.findOne({ name: response.data["name"] }, (err, token) => {
+                Token.findOne({ name: NameAliases[response.data["name"]] }, (err, token) => {
                     if (token) {
                         modifyToken(token, response.data);
                     } else {
