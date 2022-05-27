@@ -13,14 +13,14 @@ function generateNewToken(tokenData) {
     return new Token({
         name: tokenData["name"],
         short_name: tokenData["symbol"],
-        img: "@/assets/M_bitcoin.png",
-        price: Number(tokenData["price"]),
-        change_is: "0,0"
+        img: "",
+        price: +Number(tokenData["price"]).toFixed(2),
+        change_is: "up"
     });
 }
 
 function modifyToken(token, tokenData) {
-    token.change_price = token.price - Number(tokenData["price"]);
+    token.change_price = +(token.price - Number(tokenData["price"])).toFixed(2);
 
     if (token.change_price >= 0.0) {
         token.change_is = "up";
@@ -28,7 +28,7 @@ function modifyToken(token, tokenData) {
         token.change_is = "down";
     }
 
-    token.price = Number(tokenData["price"]);
+    token.price = +Number(tokenData["price"]).toFixed(2);
 }
 
 module.exports = {
@@ -44,7 +44,6 @@ module.exports = {
                 Token.findOne({ name: response.data["name"] }, (err, token) => {
                     if (token) {
                         modifyToken(token, response.data);
-                        token.save();
                     } else {
                         newToken = generateNewToken(response.data);
                         newToken.save();
