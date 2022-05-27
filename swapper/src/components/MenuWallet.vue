@@ -25,4 +25,47 @@ export default {
 </script>
 
 <style scoped>
+  .menu{
+    padding: 0 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu_name{
+    font-weight: bold;
+    font-size: 34px
+  }
+
+  .menu_img{
+    width: 10%;
+    height: 10%;
+    justify-content: space-between;
+    float: right;
+  }
+
+  .wallet{
+    background-color: rgb(24, 24, 24);
+    border: rgb(109, 109, 109) solid;
+    border-width: 1px 0;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wallet p{
+    color: gray;
+    font-size: 12px;
+  }
+
+  .wallet_pay{
+    width: 40%;
+  }
+
+  .wallet_pay img{
+    width: 25%;
+    padding-left: 40px;
+    float: right;
+  }
 </style>

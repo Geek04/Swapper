@@ -2,6 +2,7 @@
   <router-view/>
 </template>
 
+
 <style>
   #app {
     background-color:black;
