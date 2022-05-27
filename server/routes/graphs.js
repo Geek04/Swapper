@@ -3,7 +3,7 @@ const express = require("express");
 
 const token = express.Router();
 
-const Token = require('../models/Token');
+const Token = require('../models/Graph');
 
 token.get('/', async (req, res) => {
     res.json(await Token.find());
@@ -19,7 +19,7 @@ token.put('/:id', async (req, res) => {
     await Token.findByIdAndUpdate(req.params.id, req.body);
     res.json({ state: 'updated' });
 });
-
+    
 token.delete('/:id', async (req, res) => {
     await Token.findByIdAndRemove(req.params.id);
     res.json({ state: 'deleted' });

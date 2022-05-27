@@ -9,8 +9,12 @@ const router = express.Router();
 
 const Token = new Schema({
     name: String,
-    price: String,
-    timestamp: 
+    short_name: String,
+    img: String,
+    price: Number,
+    remains: {type: Number, default: 0.003},
+    change_price: Number,
+    change_is: String
 });
 
 module.exports = mongoose.model("Token", Token);
