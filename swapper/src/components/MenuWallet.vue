@@ -33,8 +33,10 @@ export default {
   }
 
   .menu_name{
+    margin-bottom: 15px;
     font-weight: bold;
-    font-size: 34px
+    font-size: 34px;
+    padding-left: 3%;
   }
 
   .menu_img{
@@ -45,10 +47,10 @@ export default {
   }
 
   .wallet{
-    background-color: rgb(24, 24, 24);
-    border: rgb(109, 109, 109) solid;
+    background-color: #121212;
+    border: rgba(109, 109, 109, 0.2) solid;
     border-width: 1px 0;
-    padding: 5%;
+    padding: 4% 5% 1.5% 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,16 +58,18 @@ export default {
 
   .wallet p{
     color: gray;
-    font-size: 12px;
+    font-size: 18px;
+    margin-top: 10px;
   }
 
   .wallet_pay{
     width: 40%;
+    margin-top: -20px;
   }
 
   .wallet_pay img{
-    width: 25%;
-    padding-left: 40px;
+    width: 35%;
+    padding-left: 10px;
     float: right;
   }
 </style>

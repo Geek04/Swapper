@@ -16,8 +16,8 @@
       <menu-footer
         :name_input="name_input"
         :name_output="name_output"
-        :img_input="img_input"
-        :img_output="img_output"
+        :img_input_min="img_input_min"
+        :img_output_min="img_output_min"
         :img_footer= "img_footer"
       ></menu-footer>
   </div>
@@ -29,8 +29,8 @@ import MenuFooter from "@/components/MenuFooter";
 
 import { Chart } from 'vue-tradingview-widgets';
 
-import img_input from "@/assets/input.png";
-import img_output from "@/assets/output.png"
+import img_input_min from "@/assets/input_min.png";
+import img_output_min from "@/assets/output_min.png"
 import img_footer from "@/assets/wheel.png";
 
 export default {
@@ -40,8 +40,8 @@ export default {
     return {  
       name_input: 'Buy AMC',
       name_output: 'Sell AMC',
-      img_input: img_input,
-      img_output: img_output,
+      img_input_min: img_input_min,
+      img_output_min: img_output_min,
       img_footer: img_footer,
     }
   },
@@ -55,15 +55,16 @@ export default {
 
 <style scoped>
   .type_token{
-    background-color: rgb(24, 24, 24);
-    border: rgb(109, 109, 109) solid;
+    background-color: #1B1B1B;
+    border: rgba(109, 109, 109, 0.2) solid;
     border-width: 1px 0;
-    padding: 2% 5% 2% 5%;
+    padding: 2% 5% 2% 7%;
   }
 
   .type_token_name{
     color: gray;
-    font-size: 14px;
+    font-size: 18px;
+    margin-bottom: 10px;
   }
 
   .type_token_pair{

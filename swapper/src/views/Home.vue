@@ -4,8 +4,8 @@
     <div class="quotes">
       <div class="portfolio">
         <div>
-          <p>Portfolio</p>
-          <span class="price" style="font-size: 32px; margin-bottom: 20px">$ 4,229.94</span>
+          <p style="font-size: 20px">Portfolio</p>
+          <span class="price" style="font-size: 36px; margin-bottom: 20px; font-weight: 600">$ 10,249.94</span>
           <span class="change_price red small_color" style="font-size: 18px">1,3%</span>
         </div>
         <img src="@/assets/rate.png" />
@@ -18,7 +18,11 @@
         <div style="height: 90px"></div>
       </div>
     </div>
-    <menu-footer :name_input="name_input" :name_output="name_output" :img_input="img_input" :img_output="img_output"
+    <menu-footer 
+      :name_input="name_input" 
+      :name_output="name_output" 
+      :img_input_min="img_input_min" 
+      :img_output_min="img_output_min"
       :img_footer= "img_footer"></menu-footer>
   </div>
 
@@ -33,8 +37,8 @@ import M_bitcoin from "@/assets/M_bitcoin.png";
 import M_ethereum from "@/assets/M_ethereum.png";
 import M_bnb from "@/assets/M_bnb.png";
 
-import img_input from "@/assets/input.png";
-import img_output from "@/assets/output.png"
+import img_input_min from "@/assets/input_min.png";
+import img_output_min from "@/assets/output_min.png"
 import img_footer from "@/assets/plus.png";
 
 import axios from "axios";
@@ -47,8 +51,8 @@ export default {
       rates: [],
       name_input: 'Deposit',
       name_output: 'Withdraw',
-      img_input: img_input,
-      img_output: img_output,
+      img_input_min: img_input_min,
+      img_output_min: img_output_min,
       img_footer: img_footer,
     }
   },
@@ -89,7 +93,7 @@ export default {
 
 <style>
 .quotes {
-  margin: 0 25px;
+  margin: 0 7%;
 }
 
 .quotes p {
@@ -111,7 +115,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0 30px 0;
+  margin: 15px 0 30px 0;
 }
 
 .portfolio img {

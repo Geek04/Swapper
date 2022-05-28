@@ -13,16 +13,29 @@
     height: 900px;
   }
 
+  @font-face {
+    font-family: "TTCommons-Regular"; 
+    src: url("@/assets/TTCommons-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: 400; 
+  } 
+
+  p, a, span{
+    font-family: "TTCommons-Regular";
+  }
+
   .price{
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     position: relative;
   }
 
   .change_price{
+    font-size: 20px;
     position: absolute;
     margin-left: 10px;
     font-weight: bold;
+    font-weight: 600; 
   }
 
   .green {
@@ -30,12 +43,12 @@
       background-image: url('assets/up.png');
       background-position: bottom 10px right 68px;
       background-repeat: no-repeat; 
-      padding-left: 38px;
+      padding-left: 20px;
       background-size: 20px 10px;
   }
 
   .small_color{
-    background-position: bottom 6px right 41px !important;
+    background-position: bottom 12px right 34px !important;
     background-size: 16px 6px !important;
   }
 
@@ -45,7 +58,7 @@
       background-position: bottom 10px right 68px;
       background-repeat: no-repeat; 
       background-size: 22px;
-      padding-left: 38px;
+      padding-left: 20px;
       background-size: 20px 10px;
   }
 

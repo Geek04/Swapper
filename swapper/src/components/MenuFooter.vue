@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
-      <img :src="img_input" alt=""><a href="#">{{name_input}}</a>
-      <img :src="img_output" alt=""><a href="#">{{name_output}}</a>
+      <img :src="img_input_min" alt=""><a href="#">{{name_input}}</a>
+      <img :src="img_output_min" alt=""><a href="#">{{name_output}}</a>
       <a href="#"><img class="footer_plus" :src="img_footer" /></a>
     </div>  
 </template>
@@ -13,8 +13,8 @@ export default {
     props: {
         name_input: String,
         name_output: String,
-        img_input: String,
-        img_output: String,
+        img_input_min: String,
+        img_output_min: String,
         img_footer: String,
   }
 }
@@ -25,7 +25,7 @@ export default {
     background-color:rgb(24, 24, 24);
     box-shadow: 0px -15px 15px black;
     position: absolute;
-    bottom: 50px;
+    top: 820px;
     border-radius: 0 0 30px 30px;
     width: 450px;
     height: 90px;
@@ -37,14 +37,15 @@ export default {
     color: white;
     text-decoration: none;
     padding: 1%;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin-left: 5px;
   }
 
   .footer img{
-    width: 10%;
-    margin-left: 25px;;
+    margin-top: -5px;
+    width: 5%;
+    margin-left: 7%;
   }
 
   .footer_plus{
