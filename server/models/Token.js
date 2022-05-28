@@ -4,9 +4,6 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-const router = express.Router();
-
-
 const Token = new Schema({
     name: String,
     short_name: String,

@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
-const axios = require("axios");
 const path = require("path");
 const token_update = require("./token_update")
 
