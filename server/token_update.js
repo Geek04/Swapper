@@ -3,6 +3,13 @@ const { response } = require("express");
 
 const Token = require("./models/Token");
 
+
+// Token addresses
+const eth = "0x2170ed0880ac9a755fd29b2688956bd959f933f8";
+const btcb = "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c";
+const wbnb = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
+const tokenAddresses = [eth, btcb, wbnb];
+
 const NameAliases = {
     "Wrapped BNB": "Binance Coin",
     "BTCB Token": "Bitcoin",
@@ -44,12 +51,6 @@ function modifyToken(token, tokenData) {
 
 module.exports = {
     updateTokens: function () {
-        eth = "0x2170ed0880ac9a755fd29b2688956bd959f933f8";
-        btcb = "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c";
-        wbnb = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
-
-        tokenAddresses = [eth, btcb, wbnb];
-
         for (tokenAddress of tokenAddresses) {
             getPancakeSwapTokenData(tokenAddress).then(response => {
                 Token.findOne({ name: NameAliases[response.data["name"]] }, (err, token) => {
