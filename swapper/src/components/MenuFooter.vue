@@ -13,25 +13,18 @@ import {useRoute} from 'vue-router'
 import {computed} from 'vue'
 
 export default {
-    name: "MenuFooter",
-    props: {
-        name_input: String,
-        name_output: String,
-        img_input_min: String,
-        img_output_min: String,
-        img_footer: String,
   name: "MenuFooter",
+  props: {
+      name_input: String,
+      name_output: String,
+      img_input_min: String,
+      img_output_min: String,
+      img_footer: String,
+      },
   data() {
     return {
       button_url: "/about"
     }
-  },
-  props: {
-    name_input: String,
-    name_output: String,
-    img_input: String,
-    img_output: String,
-    img_footer: String,
   },
   created: function () {
     const route = useRoute();
@@ -73,33 +66,6 @@ export default {
     margin-top: -5px;
     width: 5%;
     margin-left: 7%;
-  }
-
-  .footer {
-    background-color: rgb(24, 24, 24);
-    box-shadow: 0px -15px 15px black;
-    position: absolute;
-    bottom: 50px;
-    border-radius: 0 0 30px 30px;
-    width: 450px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-  }
-
-  .footer a {
-    color: white;
-    text-decoration: none;
-    padding: 1%;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 5px;
-  }
-
-  .footer img {
-    width: 10%;
-    margin-left: 25px;
-    ;
   }
 
   .footer_plus {
