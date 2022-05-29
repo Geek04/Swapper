@@ -99,7 +99,7 @@ export default {
 .quotes p {
   color: grey;
   font-size: 16px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .moneys {

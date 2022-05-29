@@ -4,7 +4,7 @@
         <div class="rate_info">
             <div class="wallet_info">
                 <p>{{name}}</p>
-                <span class="price">${{price}}</span>
+                <span class="price min_price">${{price}}</span>
                 <p>{{remains}} {{short_name}}</p>
             </div>
         </div>
@@ -58,11 +58,15 @@ export default {
         right: 20px;
     }
 
+    .min_price{
+        font-weight: 400;
+    }
+
     .green {
-        color: green;
+        color: #1BE074;
     }
 
     .red{
-        color: red;
+        color: #FE4546;
     }
 </style>

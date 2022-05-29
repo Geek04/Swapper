@@ -28,6 +28,7 @@
     font-size: 30px;
     font-weight: bold;
     position: relative;
+    font-weight: 400; 
   }
 
   .change_price{
@@ -39,7 +40,8 @@
   }
 
   .green {
-      color: green;
+      color: #1BE074;
+      font-weight: 500; 
       background-image: url('assets/up.png');
       background-position: bottom 10px right 68px;
       background-repeat: no-repeat; 
@@ -53,7 +55,8 @@
   }
 
   .red{
-      color: red;
+      color:#FE4546;
+      font-weight: 500; 
       background-image: url('assets/down.png');
       background-position: bottom 10px right 68px;
       background-repeat: no-repeat; 

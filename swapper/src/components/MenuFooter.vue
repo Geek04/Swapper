@@ -70,8 +70,8 @@ export default {
 
   .footer_plus {
     bottom: 30px;
-    left: 330px;
-    width: 17% !important;
+    left: 320px;
+    width: 15.5% !important;
     position: absolute;
     border-radius: 50%;
     box-shadow: 0px 0px 10px white;
