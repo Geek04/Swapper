@@ -35,6 +35,7 @@ export default {
         border-radius: 20px;
         justify-content: flex-start;
         position: relative;
+        padding: 1% 5% 0% 7% !important;
     }
 
     .rate img{
@@ -51,7 +52,7 @@ export default {
     }
 
     .rate_change_price{
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
         margin-top: 4px;
         position: absolute;
@@ -59,6 +60,7 @@ export default {
     }
 
     .min_price{
+        font-size: 24px !important;
         font-weight: 400;
     }
 

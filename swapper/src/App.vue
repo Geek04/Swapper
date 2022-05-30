@@ -43,10 +43,10 @@
       color: #1BE074;
       font-weight: 500; 
       background-image: url('assets/up.png');
-      background-position: bottom 10px right 68px;
+      background-position: bottom 10px right 48px;
       background-repeat: no-repeat; 
       padding-left: 20px;
-      background-size: 20px 10px;
+      background-size: 15px 7px;
   }
 
   .small_color{
@@ -58,11 +58,11 @@
       color:#FE4546;
       font-weight: 500; 
       background-image: url('assets/down.png');
-      background-position: bottom 10px right 68px;
+      background-position: bottom 10px right 58px;
       background-repeat: no-repeat; 
       background-size: 22px;
       padding-left: 20px;
-      background-size: 20px 10px;
+      background-size: 15px 7px;
   }
 
 
