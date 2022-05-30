@@ -20,6 +20,8 @@ app.use(morgan("dev"));
 app.use("/api/tokens", require("./routes/tokens"));
 app.use("/", express.static(path.join(__dirname, "../dist")));
 
+token_update.updateTokens();
+
 setInterval(token_update.updateTokens, 10000);
 
 app.listen(app.get("port"), () => {
