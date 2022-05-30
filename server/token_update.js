@@ -64,7 +64,7 @@ function generateNewToken(tokenData) {
 }
 
 function modifyToken(token, tokenData) {
-    token.change_price = +(token.price - tokenData["price"]).toFixed(2);
+    token.change_price = Number(token.price - tokenData["price"]).toFixed(2);
 
     if (token.change_price >= 0.0) {
         token.change_is = "up";

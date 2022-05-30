@@ -4,10 +4,11 @@ const morgan = require("morgan");
 const path = require("path");
 const token_update = require("./token_update")
 
+const tokenUpdateInterval = 60000;
+
 const app = express();
 
 app.set("port", 3000)
-
 
 mongoose.connect("mongodb://localhost:27017/swapper-main", { useNewUrlParser: true})
     .then (db => console.log("[OK] DB is connected"))
@@ -22,7 +23,7 @@ app.use("/", express.static(path.join(__dirname, "../dist")));
 
 token_update.updateTokens();
 
-setInterval(token_update.updateTokens, 10000);
+setInterval(token_update.updateTokens, tokenUpdateInterval);
 
 app.listen(app.get("port"), () => {
     console.log(`[OK] Server is running on localhost:${app.get("port")}`);
