@@ -65,6 +65,9 @@ export default {
       axios.get("/api/tokens").then(response => {
         this.rates = []
         response.data.forEach((token) => {
+          token["price"] = String(token["price"]).replace('.', ',');
+          token["change_price"] = String(token["change_price"]).replace('.', ',');
+
           switch (token["short_name"]) {
             case "BTC":
               token["img"] = M_bitcoin;
